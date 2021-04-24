@@ -1,0 +1,18 @@
+language: java
+jdk:
+  - oraclejdk11
+script:
+  - "./mvnw clean verify"
+branches:
+  only:
+    - main
+cache:
+  directories:
+    - $HOME/.m2
+deploy:
+  provider: heroku
+  api_key: $HEROKU_APP_KEY
+  app: moneytransfer
+  on:
+    repo: kass1025/moneytransfer
+    branch: main
