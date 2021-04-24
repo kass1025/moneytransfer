@@ -24,9 +24,9 @@ public class AccountController {
     }
 
     @GetMapping("/show/{id}")
-    public Iterable<Account> getAccountById(@PathVariable("id") String id)
+    public Account getAccountById(@PathVariable("id") String id)
     {
-      return (Iterable<Account>) accountService.getAccountById(id);
+      return  accountService.getAccountById(id);
 
     }
 
